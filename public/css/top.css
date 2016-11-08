@@ -1,0 +1,17 @@
+html,body{
+  height:100%;
+}
+.images{
+  letter-spacing: -.4em;
+  height:46%;
+}
+img{
+  width:25%;
+  height:100%;
+  display: inline-block;
+}
+.message{
+  text-align: center;
+  margin-top:200px;
+  font-size: 30px;
+}
