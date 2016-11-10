@@ -6,7 +6,9 @@
 
 @section('main')
   <div class="images">
-      <a v-for="item in items" href="/detail?id=@{{item.item_id}}" ><img src="/img/@{{item.pass}}" alt="" /></a>
+    @foreach ($items as $item)
+      <a v-for="item in items" href="/detail?id={{$item->item_id}}" ><img src="/img/{{$item->pass}}" alt="" /></a>
+    @endforeach
   </div>
   <div class="message">
     <span></span>

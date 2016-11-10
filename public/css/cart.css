@@ -1,0 +1,33 @@
+.cartinfo{
+  position: fixed;
+  width: 45%;
+  height:85%;
+  margin: 30px;
+  border: solid 1px;
+}
+.product{
+border-bottom: solid 1px;
+border-left:solid 1px;
+padding: 10px;
+width: auto;
+margin-left:50%;
+font-size: 20px;
+position: relative;
+}
+.product_price{
+}
+.product_img{
+  height:150px;
+  width:25%;
+  display: inline-block;
+}
+.product_name{
+  display: inline-block;
+  vertical-align: top;
+  width:10%;
+}
+.product_description{
+  display: inline-block;
+  vertical-align: top;
+
+}
