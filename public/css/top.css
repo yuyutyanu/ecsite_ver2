@@ -3,13 +3,13 @@
 }
 .card{
   width:25%;
-  height:320px;
+  height:300px;
   display: inline-block;
   position: relative;
   vertical-align: bottom;
 }
 .card img{
-  height:320px;
+  height:300px;
   width:100%;
 }
 .cardfooter{
@@ -24,9 +24,4 @@
 }
 .cardfooter p{
   margin-top: 15px;
-}
-.message{
-  text-align: center;
-  margin-top:200px;
-  font-size: 30px;
 }

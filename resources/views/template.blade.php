@@ -22,5 +22,6 @@
       </nav>
     </header>
     @yield('main')
+    <footer></footer>
   </body>
 </html>

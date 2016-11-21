@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 
 Route::get('/','ToppageController@index');
 Route::get('/detail','DetailController@index');
+Route::get('/addreview','ReviewController@add');
 
 /*
   ログインカート

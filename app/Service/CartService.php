@@ -5,7 +5,7 @@ use App\ITEM;
 
 class CartService{
 
-  public function addCart($product_id){
+  public function addItem($product_id){
     $item =  ITEM::where('item_id',$product_id)
               ->first();
     $cart = session()->get("cart",[]);

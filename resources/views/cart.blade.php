@@ -43,4 +43,6 @@
     </table>
 </div>
 <div class="sum">合計 : ￥{{$sum}}</div>
+
+<script src="/js/cart/cart.js" charset="utf-8"></script>
 @endsection

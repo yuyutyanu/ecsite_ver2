@@ -12,9 +12,13 @@ use App\ITEM;
 class DetailController extends BaseController
 {
     public function index(Request $request){
-      $item = ITEM::where('item_id',$request->get('id'))
-                        ->get();
-      $item = $item[0];
-      return view('detail',compact('item'));
+
+      $item = new \App\Service\DetailService;
+      $reviews = new \App\Service\ReviewService;
+
+      $item = $item->getDetail($request->get("id"));
+      $reviews = $reviews->getReview($request->get("id"));
+
+      return view('detail',compact('item','reviews'));
     }
 }
