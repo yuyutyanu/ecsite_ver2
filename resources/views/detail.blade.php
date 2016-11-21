@@ -15,7 +15,7 @@
     @if (Auth::check())
     <a href="/authcart?id={{$item->item_id}}">カートに入れる</a>
     @else
-    <a href="/addsessioncart?id={{$item->item_id}}">カートに入れる</a>
+        <a href="/addsessioncart?id={{$item->item_id}}">カートに入れる</a>
     @endif
   </div>
 

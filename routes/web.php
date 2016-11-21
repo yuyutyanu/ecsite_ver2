@@ -17,35 +17,19 @@ use Illuminate\Http\Request;
 Route::get('/','ToppageController@index');
 Route::get('/detail','DetailController@index');
 
+/*
+  ログインカート
+*/
+Route::get('/authcart','AuthCart@index');
+Route::get('/addauthcart','AuthcartController@add');
+Route::get('/deleteauthcart','AuthcartController@delete');
 
-Route::get('/sessioncart',function(){
-  $items = session()->get("cart",[]);
-  $price = 0;
-  foreach ($items as $item) {
-    $price += $item->price;
-  }
-  return view('cart',compact('items','price'));
-});
-
-//Route::resource('/Authcart','SessioncartController');
-
-
-Route::get('/addsessioncart',function(Request $request){
-  session()->flush();
-    $item =  App\ITEM::where('item_id',$request->get('id'))
-              ->first();
-    $cart = session()->get("cart",[]);
-    $cart[] = $item;
-    session()->put("cart",$cart);
-    $items = session()->get("cart",[]);
-
-    $sum = 0;
-    foreach ($items as $item) {
-      $sum += $item->price;
-    }
-    return view('cart',compact('items','sum'));
-});
-//Route::resource('/sessioncart','SessioncartController');
+/*
+  sessionカート
+*/
+Route::get('/sessioncart','SessioncartController@index');
+Route::get('/addsessioncart','SessioncartController@add');
+Route::get('/delsessioncart','SessioncartController@delete');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');

@@ -16,7 +16,7 @@
           <th>削除</th>
         </tr>
       </thead>
-    @foreach ($items as $item)
+    @foreach ($items as $index => $item)
       <tbody>
             <tr>
                 <td><img class="product_img" src="/img/{{$item->pass}}" alt="" /></td>
@@ -32,7 +32,11 @@
                   </select>
                 </td>
                 <td><p class="subtotal">￥</p></td>
+                @if (Auth::check())
                 <td><div class="product_delete"><a href="#">削除</a></div></td>
+                @else
+                <td><div class="product_delete"><a href="/delsessioncart?index={{$index}}">削除</a></div></td>
+                @endif
           </tr>
     </tbody>
     @endforeach
