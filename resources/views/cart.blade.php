@@ -4,18 +4,39 @@
 
 
 @section('main')
-
-  <div class="cartinfo">
-    {{$price}}
-  </div>
-
-@foreach ($items as $item)
-  <div class="product">
-      <img class="product_img" src="/img/{{$item->pass}}" alt="" />
-      <span class="product_name">{{$item->name}}</span>
-      <span class="product_description">{{$item->description}}<span>
-        <span class="product_price">￥{{$item->price}}<span>
-  </div>
-@endforeach
-
+  <div class="products">
+    <table>
+      <thead>
+        <tr>
+          <th>商品写真</th>
+          <th>商品名</th>
+          <th>単価</th>
+          <th>数量</th>
+          <th>小計</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+    @foreach ($items as $item)
+      <tbody>
+            <tr>
+                <td><img class="product_img" src="/img/{{$item->pass}}" alt="" /></td>
+                <td><div class="product_name">{{$item->name}}</div></td>
+                <td><div class="product_price">￥{{$item->price}}</div></td>
+                <td>
+                  <select class="quantity">
+                    @foreach (range(1,10) as $key)
+                      <option>
+                        {{$key}}
+                      </option>
+                    @endforeach
+                  </select>
+                </td>
+                <td><p class="subtotal">￥</p></td>
+                <td><div class="product_delete"><a href="#">削除</a></div></td>
+          </tr>
+    </tbody>
+    @endforeach
+    </table>
+</div>
+<div class="sum">合計 : ￥{{$sum}}</div>
 @endsection

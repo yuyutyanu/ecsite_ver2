@@ -31,6 +31,7 @@ Route::get('/sessioncart',function(){
 
 
 Route::get('/addsessioncart',function(Request $request){
+  session()->flush();
     $item =  App\ITEM::where('item_id',$request->get('id'))
               ->first();
     $cart = session()->get("cart",[]);
@@ -38,11 +39,11 @@ Route::get('/addsessioncart',function(Request $request){
     session()->put("cart",$cart);
     $items = session()->get("cart",[]);
 
-    $price = 0;
+    $sum = 0;
     foreach ($items as $item) {
-      $price += $item->price;
+      $sum += $item->price;
     }
-    return view('cart',compact('items','price'));
+    return view('cart',compact('items','sum'));
 });
 //Route::resource('/sessioncart','SessioncartController');
 
