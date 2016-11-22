@@ -16,12 +16,13 @@
           <th>削除</th>
         </tr>
       </thead>
+
     @foreach ($items as $index => $item)
       <tbody>
             <tr>
-                <td><img class="product_img" src="/img/{{$item->pass}}" alt="" /></td>
-                <td><div class="product_name">{{$item->name}}</div></td>
-                <td><div class="product_price">￥{{$item->price}}</div></td>
+                <td><img class="product_img" src="/img/{{$item->cartProduct[0]->pass}}" alt="" /></td>
+                <td><div class="product_name">{{$item->cartProduct[0]->name}}</div></td>
+                <td><div class="product_price">￥{{$item->cartProduct[0]->price}}</div></td>
                 <td>
                   <select class="quantity">
                     @foreach (range(1,10) as $key)
@@ -35,7 +36,7 @@
                 @if (Auth::check())
                 <td><div class="product_delete"><a href="#">削除</a></div></td>
                 @else
-                <td><div class="product_delete"><a href="/delsessioncart?index={{$index}}">削除</a></div></td>
+                <td><div class="product_delete"><a href="/delauthcart?index={{$index}}">削除</a></div></td>
                 @endif
           </tr>
     </tbody>

@@ -6,12 +6,12 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-use App\ITEM;
+use \App\PRODUCT;
 
 class ToppageController extends BaseController
 {
     public function index(){
-      $items = ITEM::all();
+      $items = PRODUCT::all();
       return view('top',compact('items'));
     }
 }

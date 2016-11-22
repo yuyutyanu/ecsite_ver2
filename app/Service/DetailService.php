@@ -2,11 +2,11 @@
 
 namespace App\Service;
 
-use App\ITEM;
+use \App\PRODUCT;
 
 class DetailService{
-  public function getDetail($item_id){
-    $detail = ITEM::where('item_id',$item_id)
+  public function getDetail($product_id){
+    $detail = PRODUCT::where('product_id',$product_id)
                       ->first();
     return $detail;
   }

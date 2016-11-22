@@ -18,10 +18,15 @@ class ReviewService{
     return $reviews;
   }
 
-  public function addReview($product_id,$user_id,$text){
+  public function addReview($product_id,$user_id,$star,$text){
 
     DB::table('REVIEWS')->insert(
-      [ 'product_id'=> $product_id, 'user_id' => $user_id,'review' => 3,'review_text' => $text,'entry_time' =>Carbon::now()]
+      [ 'product_id'=> $product_id,
+        'user_id' => $user_id,
+        'review' => $star,
+        'review_text' => $text,
+        'entry_time' =>Carbon::now()
+      ]
     );
 
     return  $this->getReview($product_id);

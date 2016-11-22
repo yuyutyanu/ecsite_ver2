@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Service;
-use App\ITEM;
+use App\PRODUCT;
 
-class CartService{
+class SessioncartService{
 
   public function addItem($product_id){
-    $item =  ITEM::where('item_id',$product_id)
+    $item =  PRODUCT::where('product_id',$product_id)
               ->first();
     $cart = session()->get("cart",[]);
     $cart[] = $item;
     session()->put("cart",$cart);
     $items = session()->get("cart",[]);
-
     return $items;
   }
 
@@ -27,7 +26,6 @@ class CartService{
 
   public function getItems(){
     $items = session()->get("cart",[]);
-
     return $items;
   }
 
@@ -35,6 +33,9 @@ class CartService{
     session()->forget("cart.$index");
     $items = session()->get("cart",[]);
     return $items;
+  }
+
+  public function changeQuantity($index){
   }
 
   public function allDelete(){
