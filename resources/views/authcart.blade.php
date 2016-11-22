@@ -33,11 +33,7 @@
                   </select>
                 </td>
                 <td><p class="subtotal">￥</p></td>
-                @if (Auth::check())
-                <td><div class="product_delete"><a href="#">削除</a></div></td>
-                @else
-                <td><div class="product_delete"><a href="/delauthcart?index={{$index}}">削除</a></div></td>
-                @endif
+                <td><div class="product_delete"><a href="/delauthcart?id={{$item->cartProduct[0]->product_id}}">削除</a></div></td>
           </tr>
     </tbody>
     @endforeach

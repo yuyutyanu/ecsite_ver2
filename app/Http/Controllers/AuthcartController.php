@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 class AuthcartController extends Controller
 {
-      public function index()
+      public function index(Request $request)
       {
-        return view('cart',compact('items','sum'));
+        $user = $request->user();
+        $cart = new \App\Service\AuthcartService;
+        $items = $cart->getItems($user->id);
+
+        $sum = 100;
+
+        return view('authcart',compact('items','sum'));
       }
 
       public function add(Request $request)
@@ -23,6 +29,11 @@ class AuthcartController extends Controller
 
       public function delete(Request $request)
       {
+          $user = $request->user();
+          $cart = new \App\Service\AuthcartService;
+          $items = $cart->deleteItem($user->id,$request->get('id'));
+
+          $sum=100;
         return view('authcart',compact('items','sum'));
       }
 }

@@ -23,7 +23,7 @@ Route::get('/addreview','ReviewController@add');
 */
 Route::get('/authcart','AuthcartController@index');
 Route::get('/addauthcart','AuthcartController@add');
-Route::get('/deleteauthcart','AuthcartController@delete');
+Route::get('/delauthcart','AuthcartController@delete');
 
 /*
   sessionカート
