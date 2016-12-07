@@ -29,7 +29,7 @@
 <div class="sum">合計 : ￥{{$sum}}</div>
 
 <div class="buy_button">
-  <input type="submit" name="some_name" value="購入">
+  <a href="/login"><input type="submit" name="some_name" value="購入"></a>
 </div>
 
 <script src="/js/cart/cart.js" charset="utf-8"></script>

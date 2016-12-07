@@ -30,7 +30,8 @@
 <div class="sum">合計 : ￥{{$sum}}</div>
 
 <div class="buy_button">
-  <form  action="#" method="post">
+  <form  action="/buyconfirm" method="post">
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
     <input type="submit" name="some_name" value="購入">
   </form>
 </div>

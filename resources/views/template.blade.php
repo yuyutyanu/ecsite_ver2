@@ -15,8 +15,11 @@
           <a href="/"><li>TOP</li></a>
           @if (Auth::check())
             <a href="/authcart"><li>カート</li></a>
+            <a class="logout" href="logout"><li>ログアウト</li></a>
           @else
             <a href="/sessioncart"><li>カート</li></a>
+            <a class="login" href="/login"><li>ログイン</li></a>
+            <a class="register" href="/register"><li>会員登録</li></a>
           @endif
         </ul>
       </nav>

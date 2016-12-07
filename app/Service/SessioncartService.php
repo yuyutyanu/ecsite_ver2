@@ -5,14 +5,25 @@ use App\PRODUCT;
 
 class SessioncartService{
 
-  public function addItem($product_id){
-    $item =  PRODUCT::where('product_id',$product_id)
-              ->first();
-    $cart = session()->get("cart",[]);
-    $cart[] = $item;
-    session()->put("cart",$cart);
-    $items = session()->get("cart",[]);
-    return $items;
+  public function addItem($item_id){
+  $insert_item =  PRODUCT::where('product_id',$item_id)->first();
+  $current_cart = session()->get("cart",[]);
+  /**
+  * 選択した商品がすでにカートに入っているかの確認
+  **/
+  foreach ($current_cart as $cart)
+  {
+     if($insert_item->product_id == $cart->product_id)
+     {
+         $items = session()->get("cart",[]);
+         return $items;
+     }
+   }
+         $current_cart[] = $insert_item;
+         session()->put("cart",$current_cart);
+         $items = session()->get("cart",[]);
+
+         return $items;
   }
 
   public function getSum(){
@@ -33,12 +44,5 @@ class SessioncartService{
     session()->forget("cart.$index");
     $items = session()->get("cart",[]);
     return $items;
-  }
-
-  public function changeQuantity($index){
-  }
-
-  public function allDelete(){
-    session()->flush();
   }
 }

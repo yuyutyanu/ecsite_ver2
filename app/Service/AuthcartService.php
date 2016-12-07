@@ -10,15 +10,22 @@ class AuthcartService{
 
   public function addItem($user_id,$product_id,$number){
 
+  $already = CART::where('user_id',$user_id)
+  ->where('product_id',$product_id)
+  ->first();
+
+  if (empty($already)) {
     DB::table('CART')->insert(
       [ 'user_id'=> $user_id,
-        'product_id' => $product_id,
-        'product_cart_number'=>$number
-      ]
-    );
-    $items = $this->getItems($user_id);
+      'product_id' => $product_id,
+      'product_cart_number'=>$number
+    ]
+  );
+  }
 
-    return $items;
+  $items = $this->getItems($user_id);
+
+  return $items;
   }
 
   public function getSum(){
@@ -41,11 +48,4 @@ class AuthcartService{
     $items = $this->getItems($user_id);
     return $items;
   }
-
-  public function changeQuantity($index){
-  }
-
-  public function allDelete(){
-  }
-
 }

@@ -32,5 +32,7 @@ Route::get('/sessioncart','SessioncartController@index');
 Route::get('/addsessioncart','SessioncartController@add');
 Route::get('/delsessioncart','SessioncartController@delete');
 
+Route::post('/buyconfirm','BuyconfirmController@index');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index');

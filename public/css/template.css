@@ -16,3 +16,15 @@ footer{
   height:40px;
   background-color: brown;
 }
+.login{
+  position: absolute;
+  right:10px;
+}
+.logout{
+  position: absolute;
+  right:10px;
+}
+.register{
+  position: absolute;
+  right:100px;
+}
