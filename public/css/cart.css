@@ -7,7 +7,7 @@
 .products{
 padding: 20px;
 margin:0 auto;
-width: 960px;
+width: 680px;
 font-size: 20px;
 position: relative;
 text-align: center;
@@ -38,12 +38,6 @@ width:30px;
 .product_price{
   width:100px;
 }
-.quantity{
-  width:50px;
-}
-.subtotal{
-width:200px;
-}
 .product_delete{
   width: 110px;
 }
@@ -52,5 +46,17 @@ width:200px;
   width: 80%;
   margin: 0 auto;
   border-bottom: solid 5px brown;
-  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.buy_button{
+  margin-left: 80%;
+  margin-top: 30px;
+  margin-bottom:30px;
+}
+.buy_button input{
+  padding:10px;
+  background-color: brown;
+  border: solid 1px white;
+  color: white;
 }

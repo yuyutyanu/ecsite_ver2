@@ -17,7 +17,7 @@
   </div>
 
   <div class="price">
-    ￥{{$item->price}}
+    {{$item->price}}
   </div>
 
   <div class="review_background_color">
@@ -36,6 +36,7 @@
       @endforeach
     </div>
 
+    @if (Auth::check())
       <div class="addreview">
           <button class="display_review_form">レビューを書く</button>
           <form class="review_form"action="/addreview" method="get">
@@ -45,7 +46,7 @@
               <input type="submit" name="some_name" value="送信">
           </form>
       </div>
-
+    @endif
   </div>
   <script src="/js/detail/review.js" charset="utf-8"></script>
 @endsection

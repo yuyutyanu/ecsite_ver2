@@ -14,9 +14,9 @@
         <ul>
           <a href="/"><li>TOP</li></a>
           @if (Auth::check())
-            <a href="/authcart"><li>CART</li></a>
+            <a href="/authcart"><li>カート</li></a>
           @else
-            <a href="/sessioncart"><li>CART</li></a>
+            <a href="/sessioncart"><li>カート</li></a>
           @endif
         </ul>
       </nav>
