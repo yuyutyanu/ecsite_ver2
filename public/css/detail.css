@@ -13,29 +13,30 @@ img{
   height:100%;
 }
 .add_cart{
-  height:120px;
+  height:100px;
   width:120px;
   margin:0 auto;
   margin-top: 0px;
   position: relative;
 }
-.add_cart a{
-  position: absolute;
-  height:10px;
-  width:100px;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  margin:auto;
-  text-decoration: none;
+
+.cart-submit{
+  margin-top:50px;
 }
+
 .price{
   background-color: indianred;
   bottom:50px;
   right:50px;
   text-align: center;
   padding: 10px;
+  color: white;
+}
+
+.cart-submit input{
+  padding:10px;
+  background-color: brown;
+  border: solid 1px indianred;
   color: white;
 }
 

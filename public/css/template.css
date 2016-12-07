@@ -28,3 +28,7 @@ footer{
   position: absolute;
   right:100px;
 }
+.item_num{
+  color: white;
+  border: solid 1px white;
+}

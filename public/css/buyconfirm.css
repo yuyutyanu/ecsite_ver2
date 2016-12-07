@@ -44,3 +44,10 @@ position: absolute;
 margin-left: 50%;
 margin-top: 100px;
 }
+
+.buy_button input{
+  padding:10px;
+  background-color: brown;
+  border: solid 1px white;
+  color: white;
+}

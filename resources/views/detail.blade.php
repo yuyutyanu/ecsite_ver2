@@ -7,12 +7,23 @@
 @section('main')
   <div class="itemimg"><img src="/img/{{$item->pass}}" alt="" /></div>
 
-
   <div class="add_cart">
     @if (Auth::check())
-    <a href="/addauthcart?id={{$item->product_id}}&number=1">カートに入れる</a>
+      <form action="/addauthcart" method="post">
+          <input type="hidden" name="product_id" value="{{$item->product_id}}">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <div class="cart-submit">
+            <input type="submit" value="カートに入れる">
+          </div>
+      </form>
     @else
-    <a href="/addsessioncart?id={{$item->product_id}}">カートに入れる</a>
+      <form action="/addsessioncart" method="post">
+          <input type="hidden" name="product_id" value="{{$item->product_id}}">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <div class="cart-submit">
+            <input type="submit" value="カートに入れる">
+          </div>
+      </form>
     @endif
   </div>
 
@@ -39,7 +50,8 @@
     @if (Auth::check())
       <div class="addreview">
           <button class="display_review_form">レビューを書く</button>
-          <form class="review_form"action="/addreview" method="get">
+          <form class="review_form"action="/addreview" method="post">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
           評価：<input type="number" name="star" value="" min="1" max="5">
               <input type="text" name="text" value="">
               <input type="hidden" name="product_id" value="{{$item->product_id}}">

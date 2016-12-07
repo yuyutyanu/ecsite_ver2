@@ -20,19 +20,27 @@
             <tr>
                 <td><img class="product_img" src="/img/{{$item->cartProduct[0]->pass}}" alt="" /></td>
                 <td><div class="product_name">{{$item->cartProduct[0]->name}}</div></td>
-                <td><div class="product_price">￥{{$item->cartProduct[0]->price}}</div></td>
-                <td><div class="product_delete"><a href="/delauthcart?id={{$item->cartProduct[0]->product_id}}">削除</a></div></td>
+                <td><div class="product_price">{{$item->cartProduct[0]->price}}</div></td>
+                <td class="product_delete">
+                    <form action="/delauthcart" method="post">
+                        <div class="form-bottom">
+                          <input type="hidden" name="product_id" value="{{$item->product_id}}">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                          <input type="submit" value="x">
+                        </div>
+                    </form>
+                </td>
           </tr>
     </tbody>
     @endforeach
     </table>
 </div>
-<div class="sum">合計 : ￥{{$sum}}</div>
+<div class="sum">合計 : {{$sum}}円</div>
 
 <div class="buy_button">
   <form  action="/buyconfirm" method="post">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
-    <input type="submit" name="some_name" value="購入">
+    <input type="submit" name="some_name" value="購入確認">
   </form>
 </div>
 

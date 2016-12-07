@@ -19,17 +19,25 @@
               <tr>
                   <td><img class="product_img" src="/img/{{$item->pass}}" alt="" /></td>
                   <td><div class="product_name">{{$item->name}}</div></td>
-                  <td><div class="product_price">￥{{$item->price}}</div></td>
-                  <td><div class="product_delete"><a href="/delsessioncart?index={{$index}}">削除</a></div></td>
-            </tr>
+                  <td><div class="product_price">{{$item->price}}</div></td>
+                  <td class="product_delete">
+                      <div class="form-bottom">
+                        <form action="/delsessioncart" method="post">
+                          <input type="hidden" name="index" value="{{$index}}">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                          <input type="submit" value="x">
+                        </form>
+                      </div>
+                  </td>
+              </tr>
       </tbody>
       @endforeach
     </table>
 </div>
-<div class="sum">合計 : ￥{{$sum}}</div>
+<div class="sum">合計 : {{$sum}}円</div>
 
 <div class="buy_button">
-  <a href="/login"><input type="submit" name="some_name" value="購入"></a>
+  <a href="/login"><input type="submit" name="some_name" value="購入確認"></a>
 </div>
 
 <script src="/js/cart/cart.js" charset="utf-8"></script>

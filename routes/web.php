@@ -16,23 +16,24 @@ use Illuminate\Http\Request;
 
 Route::get('/','ToppageController@index');
 Route::get('/detail','DetailController@index');
-Route::get('/addreview','ReviewController@add');
+Route::post('/addreview','ReviewController@add');
 
 /*
   ログインカート
 */
 Route::get('/authcart','AuthcartController@index');
-Route::get('/addauthcart','AuthcartController@add');
-Route::get('/delauthcart','AuthcartController@delete');
+Route::post('/addauthcart','AuthcartController@add');
+Route::post('/delauthcart','AuthcartController@delete');
 
 /*
   sessionカート
 */
 Route::get('/sessioncart','SessioncartController@index');
-Route::get('/addsessioncart','SessioncartController@add');
-Route::get('/delsessioncart','SessioncartController@delete');
+Route::post('/addsessioncart','SessioncartController@add');
+Route::post('/delsessioncart','SessioncartController@delete');
 
 Route::post('/buyconfirm','BuyconfirmController@index');
+Route::get('/buycomplite','Buycomplite@index');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');

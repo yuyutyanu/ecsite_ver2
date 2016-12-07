@@ -11,8 +11,7 @@ class AuthcartController extends Controller
         $user = $request->user();
         $cart = new \App\Service\AuthcartService;
         $items = $cart->getItems($user->id);
-
-        $sum = 100;
+        $sum = $cart->getSum($user->id);
 
         return view('authcart',compact('items','sum'));
       }
@@ -21,9 +20,9 @@ class AuthcartController extends Controller
       {
         $user = $request->user();
         $cart = new \App\Service\AuthcartService;
-        $items = $cart->addItem($user->id,$request->get('id'),$request->get('number'));
+        $items = $cart->addItem($user->id,$request->get('product_id'),$request->get('number'));
+        $sum = $cart->getSum($user->id);
 
-        $sum=100;
         return view('authcart',compact('items','sum'));
       }
 
@@ -31,9 +30,9 @@ class AuthcartController extends Controller
       {
           $user = $request->user();
           $cart = new \App\Service\AuthcartService;
-          $items = $cart->deleteItem($user->id,$request->get('id'));
+          $items = $cart->deleteItem($user->id,$request->get('product_id'));
+          $sum = $cart->getSum($user->id);
 
-          $sum=100;
-        return view('authcart',compact('items','sum'));
+          return view('authcart',compact('items','sum'));
       }
 }

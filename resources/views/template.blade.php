@@ -15,9 +15,16 @@
           <a href="/"><li>TOP</li></a>
           @if (Auth::check())
             <a href="/authcart"><li>カート</li></a>
-            <a class="logout" href="logout"><li>ログアウト</li></a>
+            <?php
+                $user = Auth::user();
+                $cart = new \App\Service\AuthcartService;
+                $items = $cart->getItems($user->id);
+            ?>
+            <span class="item_num">{{count($items)}}</span>
+            <a class="logout" href="/logout"><li>ログアウト</li></a>
           @else
             <a href="/sessioncart"><li>カート</li></a>
+            <span class="item_num">{{count(session()->get("cart",[]))}}</span>
             <a class="login" href="/login"><li>ログイン</li></a>
             <a class="register" href="/register"><li>会員登録</li></a>
           @endif

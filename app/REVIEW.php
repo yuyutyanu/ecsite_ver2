@@ -16,4 +16,7 @@ class REVIEW extends Model
     public function reviewUsers(){
         return $this->hasMany('App\User', 'id', 'user_id');
     }
+
+    public $timestamps = false;
+    
 }

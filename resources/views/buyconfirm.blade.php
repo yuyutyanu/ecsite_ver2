@@ -12,7 +12,13 @@
       <li>お届け先住所　: <input type="text" name="" value="juusyo"></li>
     </ul>
 
-    <input type="submit" name="some_name" value="購入">
+    <div class="buy_button">
+      <form  action="/buycomplite" method="post">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="submit" name="some_name" value="購入">
+      </form>
+    </div>
+
   </div>
 
   <div class="products">
@@ -30,7 +36,7 @@
             <tr>
                 <td><img class="product_img" src="/img/{{$product->cartProduct[0]->pass}}" alt="" /></td>
                 <td><div class="product_name">{{$product->cartProduct[0]->name}}</div></td>
-                <td><div class="product_price">￥{{$product->cartProduct[0]->price}}</div></td>
+                <td><div class="product_price">{{$product->cartProduct[0]->price}}</div></td>
           </tr>
     </tbody>
     @endforeach
