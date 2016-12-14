@@ -40,7 +40,7 @@
       <div class="stars">
         評価:
         @foreach (range(1,$review->review) as $index)
-          <div class="star"></div>
+          <div class="star">★</div>
         @endforeach
       </div>
       <div class="posted_text">{{$review->review_text}}</div>
@@ -49,6 +49,15 @@
 
     @if (Auth::check())
       <div class="addreview">
+          @if (count($errors) > 0)
+            <div class="validate_messages">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
           <button class="display_review_form">レビューを書く</button>
           <form class="review_form"action="/addreview" method="post">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">

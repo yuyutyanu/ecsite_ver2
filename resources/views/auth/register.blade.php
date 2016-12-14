@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">名前</label>
+                            <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Eメールアドレス</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -38,14 +38,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div id="address">
-                              <label for="name" class="col-md-4 control-label">住所</label>
-                              <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" required>
-                              </div>
+                      <!--  <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Address</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control" name="address"  value="address" required>
                             </div>
                         </div>
+                      -->
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>

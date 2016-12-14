@@ -26,8 +26,6 @@ class ReviewService{
         /*
         * すでにその商品のレビューを書いていた場合は編集、書いてない場合は追加
         */
-        if(!$text==NULL && !$star==NULL)
-        {
           if(!empty($edit_review))
           {
             REVIEW::where('product_id', $edit_review->product_id)
@@ -44,7 +42,7 @@ class ReviewService{
               ]
             );
           }
-        }
+    
         return  $this->getReview($product_id);
   }
 }
