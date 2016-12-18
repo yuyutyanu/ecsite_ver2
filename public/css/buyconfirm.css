@@ -3,6 +3,7 @@ padding: 20px;
 width: 570px;
 font-size: 20px;
 text-align: center;
+margin: 0 auto;
 }
 .products th{
   background-color: brown;
@@ -40,9 +41,14 @@ width:30px;
 }
 
 .buy_user_info{
-position: absolute;
-margin-left: 50%;
-margin-top: 100px;
+  width:500px;
+  height:150px;
+  padding: 10px;
+  margin: 0 auto;
+  border: solid 10px indianred;
+  margin-bottom: 30px;
+  margin-top:30px;
+  text-align: center;
 }
 
 .buy_button input{

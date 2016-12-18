@@ -15,11 +15,10 @@ use Illuminate\Http\Request;
 
 
 Route::get('/','ToppageController@index');
-Route::get('/detail','DetailController@index');
-Route::post('/addreview','ReviewController@add');
-
+Route::get('/detail','DetailController@index'); //商品詳細ページ
+Route::post('/addreview','ReviewController@add'); //レビュー追加
 /*
-  ログインカート
+  Authカート
 */
 Route::get('/authcart','AuthcartController@index');
 Route::post('/addauthcart','AuthcartController@add');
@@ -32,8 +31,11 @@ Route::get('/sessioncart','SessioncartController@index');
 Route::post('/addsessioncart','SessioncartController@add');
 Route::post('/delsessioncart','SessioncartController@delete');
 
+/*
+  購入ページ
+*/
 Route::post('/buyconfirm','BuyconfirmController@index');
-Route::get('/buycomplite','Buycomplite@index');
+Route::post('/buycomplite','BuycompliteController@index');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');

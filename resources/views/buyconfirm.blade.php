@@ -4,23 +4,6 @@
 @section('css','buyconfirm')
 
 @section('main')
-
-  <div class="buy_user_info">
-    <ul>
-      <li>お名前 : {{$user->name}}</li>
-      <li>eメールアドレス : {{$user->email}}</li>
-      <li>お届け先住所　: <input type="text" name="" value="juusyo"></li>
-    </ul>
-
-    <div class="buy_button">
-      <form  action="/buycomplite" method="post">
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <input type="submit" name="some_name" value="購入">
-      </form>
-    </div>
-
-  </div>
-
   <div class="products">
     <table>
       <thead>
@@ -43,4 +26,21 @@
     </table>
   </div>
 
+  <div class="sum">合計 : {{$sum}}円</div>
+
+  <div class="buy_user_info">
+    <ul>
+      <li>お名前 : {{$user->name}}</li>
+      <li>eメールアドレス : {{$user->email}}</li>
+      <li>お届け先住所　: <textarea type="text" name="" placeholder="住所" rows="4" cols="40"></textarea>
+      </ul>
+
+      <div class="buy_button">
+        <form  action="/buycomplite" method="post">
+          <input type="hidden" name="_token" value="{{csrf_token()}}">
+          <input type="submit" name="some_name" value="購入">
+        </form>
+      </div>
+
+    </div>
 @endsection

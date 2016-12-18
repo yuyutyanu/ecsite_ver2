@@ -15,7 +15,8 @@ class BuyconfirmController extends BaseController
       $user = $request->user();
       $cart = new AuthcartService;
       $products = $cart->getItems($user->id);
+      $sum = $cart->getSum($user->id);
 
-      return view('buyconfirm',compact('user','products'));
+      return view('buyconfirm',compact('user','products','sum'));
     }
 }
