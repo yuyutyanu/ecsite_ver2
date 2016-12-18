@@ -25,7 +25,7 @@ class ReviewPost extends FormRequest
     {
         return [
           'star' => 'required',
-          'text' => 'required|max:15',
+          'text' => 'required|max:70',
         ];
     }
 
@@ -33,8 +33,8 @@ class ReviewPost extends FormRequest
     {
         return [
             'star.required' => '評価されていません',
-            'text.required'  => 'レビューテキストが入力されていません',
-            'text.max' => '１５文字以内でレビューしてください',
+            'text.required'  => '入力値が空です',
+            'text.max' => '入力された文字列が長過ぎます,70文字以内でレビューしてください',
         ];
     }
 }

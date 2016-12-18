@@ -14,7 +14,7 @@ img{
 }
 .add_cart{
   height:100px;
-  width:120px;
+  width:105px;
   margin:0 auto;
   margin-top: 0px;
   position: relative;
@@ -51,6 +51,16 @@ img{
 }
 .customer_review{
   padding: 20px;
+}
+.display_review_form{
+  padding: 10px;
+  background-color:brown ;
+  color:white;
+  border:solid 1px white;
+  margin: 0 auto;
+}
+.display_review_form:hover{
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .addreview{
   text-align: center;

@@ -26,7 +26,7 @@
                         <div class="form-bottom">
                           <input type="hidden" name="product_id" value="{{$item->product_id}}">
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                          <input type="submit" value="x">
+                          <input type="submit" class="delbtn"value="X">
                         </div>
                     </form>
                 </td>

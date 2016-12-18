@@ -21,7 +21,12 @@
                 $items = $cart->getItems($user->id);
             ?>
             <span class="item_num">{{count($items)}}</span>
-            <a class="logout" href="/logout"><li>ログアウト</li></a>
+            <a class="logout" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <li>ログアウト</li>
+            </a>
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
           @else
             <a href="/sessioncart"><li>カート</li></a>
             <span class="item_num">{{count(session()->get("cart",[]))}}</span>

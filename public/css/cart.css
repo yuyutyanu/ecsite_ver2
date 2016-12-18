@@ -61,3 +61,12 @@ width:30px;
   border: solid 1px white;
   color: white;
 }
+.delbtn{
+  background-color: brown;
+  border: solid 2px indianred;
+  color: white;
+  height:25px;
+  width:25px;
+  padding:5px;
+  text-align: center;
+}

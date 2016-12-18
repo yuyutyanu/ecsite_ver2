@@ -25,7 +25,7 @@
                         <form action="/delsessioncart" method="post">
                           <input type="hidden" name="index" value="{{$index}}">
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                          <input type="submit" value="x">
+                          <input type="submit" class="delbtn" value="X">
                         </form>
                       </div>
                   </td>
