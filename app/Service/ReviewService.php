@@ -5,8 +5,8 @@ namespace App\Service;
 use App\REVIEW;
 use DB;
 use Carbon\Carbon;
-
-class ReviewService{
+use App\Service\Inter_face\diReview;
+class ReviewService implements diReview{
 
   public function getReview($product_id)
   {
@@ -42,7 +42,7 @@ class ReviewService{
               ]
             );
           }
-    
+
         return  $this->getReview($product_id);
   }
 }
